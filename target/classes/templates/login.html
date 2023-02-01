@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"  th:replace="base::Layout(~{::section})" >
+<head>
+<meta charset="ISO-8859-1">
+<title>Registration and Login App</title>
+
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	crossorigin="anonymous">
+	
+</head>
+<body style="background-color: #eee;">
+<section>
+	<div class = "container"  style="padding:60px;">
+		<div class = "row ">
+			<div class = "col-md-8 offset-md-2 font-weight-bold">
+				<div class="my-card mt-3"> 
+				
+					<div class="container text-center">
+					<img style="width:50px" th:src="@{/img/membership.png}" alt=""/>
+					</div>
+				
+				<h1 class="text-center"> Login</h1>
+				<form th:action="@{/signin}" method="post">
+					
+					<!-- error message -->
+					<div class="form-group" th:if="${param.error}">
+						<div class="alert alert-danger">Invalid username or
+							password.</div>
+					</div>
+				
+					<!-- logout message -->
+					<div class="form-group" th:if="${param.logout}">
+						<div class="alert alert-info">You have been logged out.</div>
+					</div>
+					
+					<div class = "form-group">
+						<label for ="username"> Username </label> :
+						<input type="text" class = "form-control" id ="username" name = "username"
+						placeholder="Enter Email ID" autofocus="autofocus">
+					</div>
+					
+					<div class="form-group">
+						<label for="password">Password</label>: <input type="password"
+							id="password" name="password" class="form-control"
+							placeholder="Enter Password" />
+					</div>
+					
+					<div class="form-group">
+						<div class="row">
+							<div class="col-sm-4 col-sm-offset-1">
+								<input type="submit" name="login-submit" id="login-submit"
+									class="btn bg-primary btn-block text-white" value="Log In" />
+							</div>
+						</div>
+					</div>
+				</form>
+				<div class="form-group">
+						<span>New Professor? <a  th:href="@{/signup}">Register
+								here</a></span>
+				</div>
+			</div>
+		</div>
+	</div>
+	</div> 
+</section>
+</body>
+</html>

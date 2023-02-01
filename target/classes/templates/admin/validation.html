@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Accounts Management</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	crossorigin="anonymous">
+</head>
+<body>
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+  <!-- Brand -->
+  <a class="navbar-brand" href="/admin/validation">Accounts Validation </a>
+
+  <!-- Toggler/collapsibe Button -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <!-- Navbar links -->
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" th:href="@{/admin/responsible}">Responsible management</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" th:href="@{/admin/etablissement}">Establishment Management</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-left"th:href="@{/logout}" method="post">Logout</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+		<div class ="container">
+		<div class = "row">
+			<h1> List Accounts </h1>
+		</div>
+		
+		<div class = "row">
+			<div class = "col-lg-3">
+				<a th:href = "@{/admin/responsible/new}" class = "btn btn-primary btn-sm mb-3"> Add Responsible</a>
+			</div>
+		</div>
+		 <!-- Navbar links -->
+		 
+	
+		<table class = "table table-striped table-bordered">
+			<thead class = "table-dark">
+				<tr>
+					<th> Responsible First Name</th>
+					<th> Responsible Last Name</th>
+					<th> Responsible Email </th>
+					<th> Actions </th>
+				</tr>
+			</thead>
+			
+			<tbody>
+				<tr th:each = "validation: ${validation}">
+					<td th:text = "${validation.firstName}"></td>
+					<td th:text = "${validation.lastName}"></td>
+					<td th:text = "${validation.email}"></td>
+					<td>
+						<a th:href = "@{/admin/validation/edit/{id}(id=${validation.id})}"
+						 class = "btn btn-primary">Accept</a>
+						
+						<a th:href = "@{/admin/validation/delete/{id}(id=${validation.id})}"
+						 class = "btn btn-danger">Delete</a> 
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+		<div style="position:fixed; bottom:0;" class="container-fluid bg-dark text-white text-center py-2">
+		  <p>© 2022 Copyright. All rights reserved.</p>
+		</div> 
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1" />
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+
+<!-- Optional theme -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap-theme.min.css" />
+ <link rel="stylesheet"  th:href="@{/css/style.css}">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark bg-primary text-uppercase">
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item active">
+        <a class="nav-link" th:href="@{/home}">Home <span class="sr-only">(current)</span></a>
+      </li>
+       <li class="nav-item active">
+        <a class="nav-link" th:href="@{/professor/profile}" >Profile</a>
+      </li>
+     <li class="nav-item active">
+        <a class="nav-link" th:href="@{/professor/progress}">Students Progress</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" th:href="@{/professor/meeting}">Set Meetings</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" th:href="@{/logout}" method="post">Logout</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+	<div class="container">
+		<h2 align="center">Students progress</h2>
+
+		<div id="container"
+			style="width: 100%; height: 100%; margin: 0 auto"></div>
+	</div>
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<!-- Latest compiled and minified JavaScript -->
+	<script
+		src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="https://code.highcharts.com/highcharts.js"></script>
+	<script src="https://code.highcharts.com/modules/exporting.js"></script>
+	<script th:inline="javascript">
+    $(function(){
+    Highcharts.chart('container', {
+        chart: {
+            type: 'column'
+        },
+        title: {
+            text: 'Organization'
+        },
+        subtitle: {
+            text: 'Details'
+        },
+        xAxis: {
+            categories: [[${FirstName}]],
+            crosshair: true
+        },
+        yAxis: {
+            min: 0,
+            max:100,
+            title: {
+                text: 'progress'
+            }
+        },
+        tooltip: {
+            headerFormat: '<span style="font-size:1px">{point.key}</span><table>',
+            pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+            '<td style="padding:0"><b>{point.y:.1f} K</b></td></tr>',
+            footerFormat: '</table>',
+            shared: true,
+            useHTML: true
+        },
+        plotOptions: {
+            column: {
+                pointPadding: 0.2,
+                borderWidth: 0
+            }
+        },
+        series: [{
+            name: 'Students level',
+            data: [[${Id}]]
+        }]
+      });
+    });
+</script>
+
+</body>
+</html>
