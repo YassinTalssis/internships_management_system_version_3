@@ -1,11 +1,7 @@
 package com.example.demo.entity;
-
 import java.util.*;
-
 import javax.persistence.*;
 
-
- 
 @Entity
 @Table(name = "users",uniqueConstraints = @UniqueConstraint(columnNames = "email"))
 public class User {
