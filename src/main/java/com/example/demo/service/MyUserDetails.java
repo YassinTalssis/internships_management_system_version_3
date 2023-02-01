@@ -1,12 +1,8 @@
 package com.example.demo.service;
-
-
 import java.util.*;
- 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
-
 import com.example.demo.entity.Role;
 import com.example.demo.entity.User;
  
