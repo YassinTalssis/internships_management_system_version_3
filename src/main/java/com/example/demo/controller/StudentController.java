@@ -17,7 +17,7 @@ import com.example.demo.service.UserDetailsServiceImpl;
 
 @Controller
 public class StudentController {
-	//Aissa chbaba
+	//Yassin talssis
 	@Autowired
 	private StudentServiceImpl repo;
 	@Autowired
