@@ -12,7 +12,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Validation {
-	//Aissa 
+	//talssis
 		@Id
 		@GeneratedValue
 		private int id;
