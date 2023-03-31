@@ -12,7 +12,7 @@ import com.example.demo.service.EtablissementServiceImpl;
 
 @Controller
 public class EtablissementController {
-	//Aissa chbaba
+	//Yassin TALSSIS
 	@Autowired
 	private EtablissementServiceImpl repo;
 
