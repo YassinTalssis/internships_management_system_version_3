@@ -14,7 +14,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor 
 public class Etablissement {
-	//Aissa 
+	//talssis
 	@Id
 	@GeneratedValue
 	private int id;
