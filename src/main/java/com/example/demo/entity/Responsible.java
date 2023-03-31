@@ -14,7 +14,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Responsible {
-	//Aissa 
+	//talssis
 		@Id
 		@GeneratedValue
 		private long id;
