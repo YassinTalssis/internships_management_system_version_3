@@ -5,7 +5,7 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import com.example.demo.entity.Role;
 import com.example.demo.entity.User;
- 
+//talssis
 public class MyUserDetails implements UserDetails {
  
     private User user;
