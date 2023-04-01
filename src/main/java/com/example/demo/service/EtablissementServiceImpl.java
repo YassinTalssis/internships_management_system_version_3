@@ -6,7 +6,7 @@ import com.example.demo.repository.EtablissementRepository;
 
 //import org.springframework.stereotype.Service;
 
-
+//yassin talssis
 @Service
 public class EtablissementServiceImpl implements EtablissementService{
 	
