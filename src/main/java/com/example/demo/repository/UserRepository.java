@@ -6,7 +6,7 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import com.example.demo.entity.User;
- 
+ //yassin talssis
 public interface UserRepository extends CrudRepository<User, Long> {
  
     @Query("SELECT u FROM User u WHERE u.email = :email")
