@@ -6,7 +6,7 @@ import com.example.demo.entity.Student;
 
 
 public interface StudentRepository extends JpaRepository<Student, Long> {
-	//Aissa Chbaba
+	//yassin talssis
 	/*@Query("SELECT s FROM Student s WHERE "
 			+ "CONCAT(s.id, s.firstName, s.lastName, s.departement.name)"
 			+" LIKE %?1%")
